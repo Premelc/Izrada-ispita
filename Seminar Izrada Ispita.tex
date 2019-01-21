@@ -1,6 +1,9 @@
 \documentclass{beamer}
 \usepackage{graphicx}
+\usepackage{xcolor}
 \usepackage[utf8]{inputenc}
+\usepackage[croatian]{babel}
+\usepackage[T1]{fontenc}
 
 \title{Izrada ispita}
 \date{27.1.2019.}
@@ -11,20 +14,143 @@
 \maketitle
 \tableofcontents
 
+%
+%
 %Štrbac - dio
+%
+%
+\begin{frame}
+	\begin{center}
+		\textbf{Osnovne komande za izradu ispita u LaTeX-u}
+	\end{center}
+\end{frame}
 
 \begin{frame}
+Kako bi započeli s pisanjem prvo moramo postaviti oblik koji se koristi za pisanje ispita u LaTeX-u:
+\newline
+\newline
+\color{blue}
+\textbackslash{documentclass\{exam\}}
+\color{black}
+\newline
+\newline
+Kako bi stvorili prostor za pisanje(Npr. za pisanje imena i prezimena na početku testa) koristimo naredbu \textbackslash{makebox}
+\newline
+\newline
+\color{blue}
+\textbackslash{makebox[\textbackslash{textwidth}]}\{Ime i prezime:\textbackslash{enspace\textbackslash{hrulefill}}\}
+\color{black}
+\newline
+\newline
+\textbackslash{textwidth} postavlja veličinu prostora za pisanje na veličinu teksta dok \textbackslash{enspace\textbackslash{hrulefill}} ispunjuje ostatak retka vodoravnom crtom
+\end{frame}
+
+\begin{frame}
+Kada tu naredbu upišemo trebali bi smo dobiti ovo:
+\newline
+\newline
+\makebox[\textwidth]{Ime i prezime:\enspace\hrulefill}
+\end{frame}
+
+\begin{frame}
+Kako bi postavili pitanja za ispit u LaTeX-u koristimo okruženje:
+\newline
+\newline
+\color{blue}
+\textbackslash{begin\{questions\}}
+\color{black}
+\color{blue}
+\newline
+\newline
+\textbackslash{end\{questions\}}
+\color{black}
+\newline
+\newline
+Zatim dodajemo tekst ispod naredbi:
+\newline
+\newline
+\color{blue}
+\textbackslash{question[1 bod]}
+\color{black}
+\newline
+Koliko je 2+2?
+\newline
+\newline
+\color{blue}
+\textbackslash{question[3 boda]}
+\color{black}
+\newline
+Tko je pobijedio drugi svjetski rat?
+
+\end{frame}
+
+\begin{frame}
+	To izgleda ovako:
+	\newline
+	\newline
+	\question[1 bod]
+	Koliko je 2+2?
+	\newline
+	\newline
+	\question[3 boda]
+	Tko je pobijedio drugi svjetski rat?
+\end{frame}
+
+
+\begin{frame}
+Za postavljanje podpitanja koristi se okruženje:
+\newline
+\newline
+\color{blue}
+\textbackslash{begin\{parts\}}
+\color{black}
+\newline
+\newline
+\color{blue}
+\textbackslash{end\{parts\}}
+\color{black}
+\newline
+\newline
+Unutar tog okruženja koristimo
+\newline
+\newline
+\color{blue}
+\textbackslash{part}
+\color{black}
+\newline
+\newline
+za svako podpitanje koje želimo postavit
+\end{frame}
+
+\begin{frame}
+1. 
+	\question[1 bod]
+	Koliko je 2+2?
+	\part
+		\newline
+		(a) 3 \newline
+		(b) 4
 
 \end{frame}
 
 
+
+
+%
+%
 %Premelč - dio
+%
+%
 
 \begin{frame}
 
 \end{frame}
-		
+
+%
+%	
 %Županović - dio
+%
+%
 
 \begin{frame}
 
