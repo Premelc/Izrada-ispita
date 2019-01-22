@@ -1,24 +1,34 @@
-\documentclass{beamer}
+\documentclass[addpoints,answers]{beamer}
+
 \usepackage{graphicx}
 \usepackage{xcolor}
 \usepackage[utf8]{inputenc}
 \usepackage[croatian]{babel}
 \usepackage[T1]{fontenc}
+\usepackage{mathexam}
+\usepackage{hyperref}
+%Jebeno kad dodam package i ove commande dole mi vise ne radi nista kako piše u literaturi, al mi ne daje errore tako da nez sta se desava
+\newcounter{points}
+\newenvironment{choices}{\begin{enumerate}}{\end{enumerate}}
+\newenvironment{questions}{\setcounter{points}{0}}{}
+\newcommand{\question}[1][1]{\addtocounter{points}{#1}}
 
-\title{Izrada ispita}
-\date{27.1.2019.}
-\author{Renato Štrbac, Dominik Premelč, Luka Županović}
 
 \begin{document}
-\pagenumbering{arabic}
-\maketitle
-\tableofcontents
-
-%
-%
-%Štrbac - dio
-%
-%
+	\title{Izrada ispita}
+	\date{27.1.2019.}
+	\author{Renato Štrbac, Dominik Premelč, Luka Županović}
+	
+	
+	\pagenumbering{arabic}
+	\maketitle
+	\tableofcontents
+	
+	%
+	%
+	%Štrbac - dio
+	%
+	%
 \begin{frame}
 	\begin{center}
 		\textbf{Osnovne komande za izradu ispita u LaTeX-u}
@@ -30,7 +40,7 @@ Kako bi započeli s pisanjem prvo moramo postaviti oblik koji se koristi za pisa
 \newline
 \newline
 \color{blue}
-\textbackslash{documentclass\{exam\}}
+\textbackslash{documentclass[addpoints,answers]\{exam\}}
 \color{black}
 \newline
 \newline
@@ -70,31 +80,37 @@ Zatim dodajemo tekst ispod naredbi:
 \newline
 \newline
 \color{blue}
-\textbackslash{question[1 bod]}
+\textbackslash{question[1]}
 \color{black}
 \newline
 Koliko je 2+2?
 \newline
 \newline
 \color{blue}
-\textbackslash{question[3 boda]}
+\textbackslash{question[4]}
 \color{black}
 \newline
 Tko je pobijedio drugi svjetski rat?
 
 \end{frame}
 
+
 \begin{frame}
-	To izgleda ovako:
-	\newline
-	\newline
-	\question[1 bod]
-	Koliko je 2+2?
-	\newline
-	\newline
-	\question[3 boda]
-	Tko je pobijedio drugi svjetski rat?
+\begin{questions}
+	
+To izgleda ovako:
+\newline
+\newline
+\question[1]
+[1 Point] Koliko je 2+2?
+\newline
+\newline
+\question[4]
+[4 Points] Tko je pobijedio drugi svjetski rat?
+\end{questions}
 \end{frame}
+
+
 
 
 \begin{frame}
@@ -123,20 +139,146 @@ za svako podpitanje koje želimo postavit
 \end{frame}
 
 \begin{frame}
-1. 
-	\question[1 bod]
-	Koliko je 2+2?
-	\part
-		\newline
-		(a) 3 \newline
-		(b) 4
+\begin{questions} 
+	\question[1]
+ [1 Point] Koliko je 2+2?\newline
+	(a) 3 \newline
+	(b)	4 
+\end{questions}
+\end{frame}
 
+
+\begin{frame}
+	Koristimo
+	\newline
+	\newline
+	\color{blue}
+	\textbackslash{vspace\{2in\}} 
+	\color{black}
+	\newline
+	\newline
+	 kako bi ostavili mjesto za pisanje. Ovdje je postavljeno mjesto od 2 inča, ali ne mora nužno biti.
+\end{frame}
+
+\begin{frame}
+	Po standardu su bodovi pokraj pitanja uključeni, ali ako mi želimo ih možemo isključiti sa naredbom
+	\newline
+	\newline
+	\color{blue}
+	\textbackslash{noaddpoints}
+	\color{black}
+	\newline
+	\newline
+	A ako ih želimo vratiti koristimo 
+	\newline
+	\newline
+	\color{blue}
+	\textbackslash{addpoints}
+	\color{black}
+\end{frame}
+
+\begin{frame}
+	Isto tako koristimo slijedeće naredbe da odredimo di će se bodovi nalazit. Ako ništa ne odredimo po standardu bodovi će pisat ispred pitanja.
+	\newline
+	\newline
+	\color{blue}
+	\textbackslash{pointsinmargin}
+		\color{black}
+	(U lijevoj margini)
+		\color{blue}
+	\newline
+	\newline
+	\textbackslash{pointsinrightmargin}
+		\color{black}
+	(U desnoj margini)
+		\color{blue}
+	\newline
+	\newline
+	\textbackslash{pointstwosided}
+		\color{black}
+	(U desnoj margini na neparnim, a u lijevoj na parnim stranicama)
+		\color{blue}
+	\newline
+	\newline
+	\textbackslash{pointstwosidedreversed}
+		\color{black}
+	(U lijevoj margini na neparnim, a u desnoj na parnim stranicama)
+		\color{blue}
+	\newline
+	\newline
+	\textbackslash{nopointsinmargin}\color{black}   (Da se vratimo na standard)
+\end{frame}
+
+\begin{frame}
+	Ako koristimo:
+	\newline
+	\newline
+	\color{blue}
+	\textbackslash{pointsinmargin}
+	\newline
+	\newline
+	\textbackslash{pointsinrightmargin}
+	\newline
+	\newline
+	\color{black}
+	Onda možemo mijenjat veličinu margina, npr.
+	\newline
+	\newline
+	\color{blue}
+	\textbackslash{setlength\{\textbackslash{marginpointssep}\}}\{5pt\}
+	\newline
+	\newline
+	\textbackslash{setlength\{\textbackslash{rightpointsmargin}\}}\{1cm\}
+	\color{black}
+	\newline
+	\newline
+	Duljine su naravno proizvoljne.
+\end{frame}
+
+
+\begin{frame}
+	Postoje i razne naredbe kojima možemo ukrasiti bodove. Npr.
+	\newline
+	\newline
+	\color{blue}
+	\textbackslash{boxedpoints}
+	\color{black}
+	(Stavi bodove u pravokutnik)
+	\color{blue}
+	\newline
+	\newline
+	\color{blue}
+	\textbackslash{bracketed points}
+	\color{black}
+	(Stavi ih u zagrade)
+	\newline
+	\newline
+	Osim toga po standardu se bodovi označuju engleskom riječi "Point". Ako želimo promijeniti i napisat recimo "Bod" pisali bi:
+	\newline
+	\newline
+	\color{blue}
+	\textbackslash{pointpoints\{Bod\}\{Bodovi\}}
+	\color{black}
+	\newline
+	(U lijevoj zagradi pišemo jedninu, a u desnoj množinu)
+	\color{blue}
+\end{frame}
+
+\begin{frame}
+	Ako želimo postaviti naslov ispod kojeg čemo redati pitanja možemo upotrijebiti naredbu:
+	\newline
+	\newline
+	\color{blue}
+	\textbackslash{titledquestion\{Design\}[10]}
+	\color{black}
+	\newline
+	\newline
+	Ovo će postaviti naslov na "Design" i postaviti broj 10 pokraj naslova koji opisuje broj bodova.
 \end{frame}
 
 
 
-
-%
+%Note, izostavi ista vezano uz bonus questions ako ima u tvom djelu, ja sam to izostavio u svom
 %
 %Premelč - dio
 %
@@ -155,7 +297,7 @@ za svako podpitanje koje želimo postavit
 \begin{frame}
 
 \end{frame}
-	
 
-	
+
 \end{document}
+	
