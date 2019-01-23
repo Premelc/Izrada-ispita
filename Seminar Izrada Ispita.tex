@@ -7,7 +7,7 @@
 \usepackage[T1]{fontenc}
 \usepackage{mathexam}
 \usepackage{hyperref}
-%Jebeno kad dodam package i ove commande dole mi vise ne radi nista kako piše u literaturi, al mi ne daje errore tako da nez sta se desava
+% kad dodam package i ove commande dole mi vise ne radi nista kako piše u literaturi, al mi ne daje errore tako da nez sta se desava
 \newcounter{points}
 \newenvironment{choices}{\begin{enumerate}}{\end{enumerate}}
 \newenvironment{questions}{\setcounter{points}{0}}{}
@@ -29,7 +29,7 @@
 	%Štrbac - dio
 	%
 	%
-\begin{frame}
+	\begin{frame}
 	\begin{center}
 		\textbf{Osnovne komande za izradu ispita u LaTeX-u}
 	\end{center}
@@ -56,7 +56,7 @@ Kako bi stvorili prostor za pisanje(Npr. za pisanje imena i prezimena na početk
 \end{frame}
 
 \begin{frame}
-Kada tu naredbu upišemo trebali bi smo dobiti ovo:
+Kada tu naredbu upišemo dobijemo ovo:
 \newline
 \newline
 \makebox[\textwidth]{Ime i prezime:\enspace\hrulefill}
@@ -97,7 +97,7 @@ Tko je pobijedio drugi svjetski rat?
 
 \begin{frame}
 \begin{questions}
-	
+
 To izgleda ovako:
 \newline
 \newline
@@ -140,140 +140,140 @@ za svako podpitanje koje želimo postavit
 
 \begin{frame}
 \begin{questions} 
-	\question[1]
- [1 Point] Koliko je 2+2?\newline
-	(a) 3 \newline
-	(b)	4 
+\question[1]
+[1 Point] Koliko je 2+2?\newline
+(a) 3 \newline
+(b)	4 
 \end{questions}
 \end{frame}
 
 
 \begin{frame}
-	Koristimo
-	\newline
-	\newline
-	\color{blue}
-	\textbackslash{vspace\{2in\}} 
-	\color{black}
-	\newline
-	\newline
-	 kako bi ostavili mjesto za pisanje. Ovdje je postavljeno mjesto od 2 inča, ali ne mora nužno biti.
+Koristimo
+\newline
+\newline
+\color{blue}
+\textbackslash{vspace\{2in\}} 
+\color{black}
+\newline
+\newline
+kako bi ostavili mjesto za pisanje. Ovdje je postavljeno mjesto od 2 inča, ali ne mora nužno biti.
 \end{frame}
 
 \begin{frame}
-	Po standardu su bodovi pokraj pitanja uključeni, ali ako mi želimo ih možemo isključiti sa naredbom
-	\newline
-	\newline
-	\color{blue}
-	\textbackslash{noaddpoints}
-	\color{black}
-	\newline
-	\newline
-	A ako ih želimo vratiti koristimo 
-	\newline
-	\newline
-	\color{blue}
-	\textbackslash{addpoints}
-	\color{black}
+Po standardu su bodovi pokraj pitanja uključeni, ali se mogu isključiti sa naredbom
+\newline
+\newline
+\color{blue}
+\textbackslash{noaddpoints}
+\color{black}
+\newline
+\newline
+A ako ih želimo vratiti koristimo 
+\newline
+\newline
+\color{blue}
+\textbackslash{addpoints}
+\color{black}
 \end{frame}
 
 \begin{frame}
-	Isto tako koristimo slijedeće naredbe da odredimo di će se bodovi nalazit. Ako ništa ne odredimo po standardu bodovi će pisat ispred pitanja.
-	\newline
-	\newline
-	\color{blue}
-	\textbackslash{pointsinmargin}
-		\color{black}
-	(U lijevoj margini)
-		\color{blue}
-	\newline
-	\newline
-	\textbackslash{pointsinrightmargin}
-		\color{black}
-	(U desnoj margini)
-		\color{blue}
-	\newline
-	\newline
-	\textbackslash{pointstwosided}
-		\color{black}
-	(U desnoj margini na neparnim, a u lijevoj na parnim stranicama)
-		\color{blue}
-	\newline
-	\newline
-	\textbackslash{pointstwosidedreversed}
-		\color{black}
-	(U lijevoj margini na neparnim, a u desnoj na parnim stranicama)
-		\color{blue}
-	\newline
-	\newline
-	\textbackslash{nopointsinmargin}\color{black}   (Da se vratimo na standard)
+Isto tako koristimo slijedeće naredbe da odredimo di će se bodovi nalazit. Ako ništa ne odredimo po standardu bodovi će pisat ispred pitanja.
+\newline
+\newline
+\color{blue}
+\textbackslash{pointsinmargin}
+\color{black}
+(U lijevoj margini)
+\color{blue}
+\newline
+\newline
+\textbackslash{pointsinrightmargin}
+\color{black}
+(U desnoj margini)
+\color{blue}
+\newline
+\newline
+\textbackslash{pointstwosided}
+\color{black}
+(U desnoj margini na neparnim, a u lijevoj na parnim stranicama)
+\color{blue}
+\newline
+\newline
+\textbackslash{pointstwosidedreversed}
+\color{black}
+(U lijevoj margini na neparnim, a u desnoj na parnim stranicama)
+\color{blue}
+\newline
+\newline
+\textbackslash{nopointsinmargin}\color{black}   (Da se vratimo na standard)
 \end{frame}
 
 \begin{frame}
-	Ako koristimo:
-	\newline
-	\newline
-	\color{blue}
-	\textbackslash{pointsinmargin}
-	\newline
-	\newline
-	\textbackslash{pointsinrightmargin}
-	\newline
-	\newline
-	\color{black}
-	Onda možemo mijenjat veličinu margina, npr.
-	\newline
-	\newline
-	\color{blue}
-	\textbackslash{setlength\{\textbackslash{marginpointssep}\}}\{5pt\}
-	\newline
-	\newline
-	\textbackslash{setlength\{\textbackslash{rightpointsmargin}\}}\{1cm\}
-	\color{black}
-	\newline
-	\newline
-	Duljine su naravno proizvoljne.
+Ako koristimo:
+\newline
+\newline
+\color{blue}
+\textbackslash{pointsinmargin}
+\newline
+\newline
+\textbackslash{pointsinrightmargin}
+\newline
+\newline
+\color{black}
+Onda možemo mijenjat veličinu margina, npr.
+\newline
+\newline
+\color{blue}
+\textbackslash{setlength\{\textbackslash{marginpointssep}\}}\{5pt\}
+\newline
+\newline
+\textbackslash{setlength\{\textbackslash{rightpointsmargin}\}}\{1cm\}
+\color{black}
+\newline
+\newline
+Duljine su naravno proizvoljne.
 \end{frame}
 
 
 \begin{frame}
-	Postoje i razne naredbe kojima možemo ukrasiti bodove. Npr.
-	\newline
-	\newline
-	\color{blue}
-	\textbackslash{boxedpoints}
-	\color{black}
-	(Stavi bodove u pravokutnik)
-	\color{blue}
-	\newline
-	\newline
-	\color{blue}
-	\textbackslash{bracketed points}
-	\color{black}
-	(Stavi ih u zagrade)
-	\newline
-	\newline
-	Osim toga po standardu se bodovi označuju engleskom riječi "Point". Ako želimo promijeniti i napisat recimo "Bod" pisali bi:
-	\newline
-	\newline
-	\color{blue}
-	\textbackslash{pointpoints\{Bod\}\{Bodovi\}}
-	\color{black}
-	\newline
-	(U lijevoj zagradi pišemo jedninu, a u desnoj množinu)
-	\color{blue}
+Postoje i razne naredbe kojima možemo ukrasiti bodove. Npr.
+\newline
+\newline
+\color{blue}
+\textbackslash{boxedpoints}
+\color{black}
+(Stavi bodove u pravokutnik)
+\color{blue}
+\newline
+\newline
+\color{blue}
+\textbackslash{bracketed points}
+\color{black}
+(Stavi ih u zagrade)
+\newline
+\newline
+Osim toga po standardu se bodovi označuju engleskom riječi "Point". Ako želimo promijeniti i napisat recimo "Bod" pisali bi:
+\newline
+\newline
+\color{blue}
+\textbackslash{pointpoints\{Bod\}\{Bodovi\}}
+\color{black}
+\newline
+(U lijevoj zagradi pišemo jedninu, a u desnoj množinu)
+\color{blue}
 \end{frame}
 
 \begin{frame}
-	Ako želimo postaviti naslov ispod kojeg čemo redati pitanja možemo upotrijebiti naredbu:
-	\newline
-	\newline
-	\color{blue}
-	\textbackslash{titledquestion\{Design\}[10]}
-	\color{black}
-	\newline
-	\newline
-	Ovo će postaviti naslov na "Design" i postaviti broj 10 pokraj naslova koji opisuje broj bodova.
+Ako želimo postaviti naslov ispod kojeg čemo redati pitanja možemo upotrijebiti naredbu:
+\newline
+\newline
+\color{blue}
+\textbackslash{titledquestion\{Design\}[10]}
+\color{black}
+\newline
+\newline
+Ovo će postaviti naslov na "Design" i postaviti broj 10 pokraj naslova koji opisuje broj bodova.
 \end{frame}
 
 
@@ -285,8 +285,130 @@ za svako podpitanje koje želimo postavit
 %
 
 \begin{frame}
+U LaTex-u imamo mogućnost upravljanja marginama pomoću naredbi:
+\newline
+\newline
+\color{blue}
+\textbackslash{uplevel}
+\newline
+\newline
+\color{black}
+\color{blue}
+\textbackslash{fullwidth}
+\color{black}
+\newline
+\newline
+Naredba \color{blue}\textbackslash{uplevel} \color{black} smanjuje marginu s lijeve strane za jednu razinu dok će naredba \color{blue} \textbackslash{fullwidth} \color{black} smanjiti margine na naćin da tekst ispisuje od ruba do ruba stranice.
+\end{frame}
+
+
+\begin{frame}
+
+To izgleda ovako:
+%NEDOVRŠENO
+%mjesto za priumjer \uplevel komande
+\end{frame}
+
+\begin{frame}
+%NEDOVRŠENO
+%mjesto za pruimjer \fullwidth komande
+\end{frame}
+
+\begin{frame}
+Često koristimo komandu \color{blue} \textbackslash{fullwidth} \color{black} kako bi naslovili djelove ispita
+\newline
+\newline
+Isto se može postići koristeći komande \color{blue} \textbackslash{part}\color{black} \newline 
+i komandu \color{blue}\textbackslash{section}\color{black}
+\end{frame}
+
+\begin{frame}
+%Ovdje nes ne stima,kao da nemamo ukljucen exam paket,nek neko proba ovo pokrenut u TexStudio jer ja radim na Overleafu
+Koristeći komandu \color{blue}\textbackslash{fullwidth}\color{black}:
+\newline\newline
+\begin{questions}
+\question
+1. Objasnite fotoelektrični učinak.\newline\newline
+\fullwidth{\Large \textbf{Esejska pitanja}}\newline\newline
+\question
+2. U obliku eseja objasnite što vas je motiviralo da upišete računarstvo.\newline\newline
+\fullwidth{\Large \textbf{Laboratorijska vježba}}\newline\newline
+\question
+3. Izmjerite struju i napon na kondenzatoru C1.
+\end{questions}
 
 \end{frame}
+
+\begin{frame}{Ostavljanje mjesta za odgovore}
+Postoji nekoliko naćina za ostaviti mjesto za odgovor:
+\begin{enumerate}
+\item Prazno mjesto (\color{blue}\textbackslash{solution}\color{black})
+\item Prazni okvir (\color{blue}\textbackslash{solutionorbox}\color{black})
+\item Prostor ispunjen linijama (\color{blue}\textbackslash{solutionorlines}\color{black})
+\item Prostor ispunjen linijama točaka (\color{blue}\textbackslash{solutionordottedlines}\color{black})
+\item Prostor ispunjen mrežom (\color{blue}\textbackslash{solutionorgrid}\color{black})
+\newline\newline
+\end{enumerate}
+Ove komande podrazumjevaju otvaranje različitih okruženja za pojedini odgovor \newline
+U nastavku čemo proučiti kako ostaviti mjersto za odgovor bbez otvaranja novog okruženja
+%dodati primjer za svako?
+\end{frame}
+
+\begin{frame}{Ostavljanje praznog mjesta za odgovor}
+
+Koristimo naredbu \color{blue}\textbackslash{vspace*\{1in\}}\color{black}
+\newline
+Broj u zagradi predstavlja veličinu praznog mjesta koje želimo ostaviti za odgovor
+\newline
+Također možemo koristiti naredbu \color{blue}\textbackslash{vspace*\{stretch\{1\}\}}\color{black} nakon svakog pitanja kako bi ravnomjerno rasporedili prazan prostor na stranici
+
+\end{frame}
+
+\begin{frame}{Ostavljanje praznog okvira za odgovor}
+Koristimo naredbu \color{blue}\textbackslash{makeemptybox\{length}\color{black}
+\newline
+Ovako stvorenom praznom okviru kasnije možemo mjenjati boju tako da u preambuli dokumenta navedemo paket \color{blue}\textbackslash{usepackage\{color\}}\color{black}
+\newline
+\newline
+Zatim moramo defrinrati boju komandom\newline
+\color{blue}\textbackslash{definecolor\{SolutionBoxColor\}\{gray\}\{0.8\}}\color{black}
+\newline
+\newline
+Nakon što smo definirali boju,okvire obojimo komandom \color{blue}\textbackslash{colorsolutionboxes}\color{black}
+
+\end{frame}
+
+\begin{frame}{Ostavljanje linija za duzi odgovor}
+
+Korsiti se komanda \color{blue}\textbackslash{fillwithlines\{length\}}\color{black}\newline\newline
+Te linije se mogu obojati na isti naćin kao i prazni okviri to jest, komandom \color{blue}\textbackslash{colorfillwithlines}\color{black}
+\newline
+Udaljenost između linija određujemo komandom\color{blue}\textbackslash{setlength}\textbackslash{linefillheight\{.25in\}}\color{black}\newline
+Zakođer možemo mjenjati i debljinu linija pomoću komande\color{blue} \textbackslash{setlength}\textbackslash{linefillthickness\{0.1pt\}}
+\end{frame}
+
+\begin{frame}{Ostavljanje linija točaka za odgovor}
+Koristimo naredbu  \color{blue}\textbackslash{fillwithdottedlines\{length\}}\color{black}\newline
+Ovim linijama također možemo mjenjati boju i udaljenost između točaka na isti način kao i kod prijašnjih primjera
+
+\end{frame}
+
+\begin{frame}{Ostavljanje mjesta za odgovor popunjeno mrežom}
+Koristimo naredbu \color{blue}\textbackslash{fillwithgrid\{lenght\}}\color{black}\newline
+veličinu mreže i razmaka između linija mreže definiramo komandama \color{blue}\textbackslash{setlenght\{\textbackslash{gridsize}\}\{5mm\}}\color{black} te \color{blue}\textbackslash{setlenght\{\textbackslash{gridlinewidth}\}\{0.1pt\}}\color{black}
+\newline
+Također mrežu možemo obojati na isti način kao i prethodne primjere
+
+\end{frame}
+\begin{frame}{Korištenje mreže}
+Mrežu također možemo staviti preko cjele stranice kako bi stvorili papir na kockice
+\newline
+To postižemo uz pomoć komande\color{blue}\textbackslash{fillwithgrid\{\textbackslash{stretch\{1\}}}
+%dodati primjer?
+\end{frame}
+
+
+
 
 %
 %	
@@ -300,4 +422,3 @@ za svako podpitanje koje želimo postavit
 
 
 \end{document}
-	
